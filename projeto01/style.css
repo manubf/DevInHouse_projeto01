@@ -1,0 +1,42 @@
+* {
+  background-color: #c5ecac;
+  box-sizing: border-box;
+  
+}
+
+#topo {
+  text-align: center;
+  position: relative;
+  font-family: sans-serif ;
+
+}
+
+form {
+  padding-block-end: 10px; 
+  border: 3px solid #777DA7;
+  text-align: center;
+}
+
+#mostra_lista {
+  text-align: center;
+  border: 3px solid #777DA7; 
+}
+
+li {
+  list-style-type: none;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+ 
+#pedepagina {
+  background-color: #777DA7;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  
+
+}

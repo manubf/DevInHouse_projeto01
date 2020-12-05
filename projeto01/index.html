@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Emanuelle Besckow Figueiredo">
+    <meta name="description" content="Lista afazeres do projeto_1 do DevInHouse">
+    <meta name="keywords" content="fullstack, DevInHouse, desenvolvimento">
+    <link rel="shortcut icon" href="list.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/script.js" defer></script>
+    <title>TAREFAS!</title>
+</head>
+
+<body>
+    <header id="topo">
+        <h1>Sua lista de tarefas:</h1>
+        <p>Crie novos afazeres e confira o que já realizou!</p>
+    </header>
+
+    <form>
+        <div id="adiciona" class="header">
+            <h2>Insira seus novos objetivos:</h2>
+            <label for="adicionando">
+                <input type="text" id="myInput" adicionando="itens e tarefas" placeholder="Ex:Formatura DevInHouse" required>
+            </label>
+            <button type="submit" onclick="novaAtividade(); return false;" class="addBtn">Adicionar</button>
+        </div>
+    </form>
+    <div>
+        <ul id="mostra_lista">Atividades já cadastradas:</ul>
+    </div>
+
+    <footer id="pedepagina">Emanuelle Besckow Figueiredo &#x1F4BB Empenhada em conhecer e aprender! &#x1F4BB </footer>
+</body>
+
+</html>
