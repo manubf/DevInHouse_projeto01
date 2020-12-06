@@ -28,7 +28,7 @@ function atualizaLocalstorage(){
     let ulChildren = document.getElementById('mostra_lista').children;
     for (let i = 0; i < ulChildren.length; i++) {
         let rotulo = ulChildren[i].textContent;
-        let marcado = ulChildren[i].lastChild.checked; 
+        let marcado = ulChildren[i].firstChild.checked; 
         listaAfazeresDois.push({rotulo, marcado});
     }
     lista_afazeres = listaAfazeresDois;
@@ -56,8 +56,8 @@ function criarElementoLista(rotulo, marcado) {
         }
     };
     
-    li.append(apaga);
-    li.appendChild(check);
+    li.prepend(apaga);
+    li.prepend(check);
 
     function troca_bool(){
         if(check.checked === true){
