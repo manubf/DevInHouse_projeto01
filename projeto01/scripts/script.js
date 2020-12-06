@@ -18,8 +18,21 @@ function novaAtividade() {
     novoRotulo.value = "";
 }
 
+
 function salva_localstorage() {
     localStorage.setItem('lista_afazeres', JSON.stringify(lista_afazeres));
+}
+
+function atualizaLocalstorage(){
+    let listaAfazeresDois = [];
+    let ulChildren = document.getElementById('mostra_lista').children;
+    for (let i = 0; i < ulChildren.length; i++) {
+        let rotulo = ulChildren[i].textContent;
+        let marcado = ulChildren[i].lastChild.checked; 
+        listaAfazeresDois.push({rotulo, marcado});
+    }
+    lista_afazeres = listaAfazeresDois;
+    salva_localstorage()
 }
 
 function criarElementoLista(rotulo, marcado) {
@@ -37,17 +50,10 @@ function criarElementoLista(rotulo, marcado) {
     let apaga = document.createElement('img');
     apaga.src = 'close.png'
     apaga.onclick = function(){
-        li.remove();
-        let listaAfazeresDois = [];
-        let ulChildren = document.getElementById('mostra_lista').children;
-        for (let i = 0; i < ulChildren.length; i++) {
-            let rotulo = ulChildren[i].textContent;
-            let marcado = ulChildren[i].lastChild.checked; 
-            listaAfazeresDois.push({rotulo, marcado});
+        if (confirm('Deseja excluir essa tarefa?')){
+            li.remove();
+            atualizaLocalstorage();
         }
-        lista_afazeres = listaAfazeresDois;
-        salva_localstorage()
-
     };
     
     li.append(apaga);
@@ -60,15 +66,7 @@ function criarElementoLista(rotulo, marcado) {
         else{
             li.style.textDecoration = 'none';
         }
-        let listaAfazeresDois = [];
-        let ulChildren = document.getElementById('mostra_lista').children;
-        for (let i = 0; i < ulChildren.length; i++) {
-            let rotulo = ulChildren[i].textContent;
-            let marcado = ulChildren[i].lastChild.checked; 
-            listaAfazeresDois.push({rotulo, marcado});
-        }
-        lista_afazeres = listaAfazeresDois;
-        salva_localstorage()
+        atualizaLocalstorage();
     }
 
     
